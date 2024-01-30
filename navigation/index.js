@@ -4,6 +4,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import HomeScreen from "../screens/Home";
 import AddProductScreen from '../screens/AddProduct';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { SCREENS } from '../constants/Screens';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -13,7 +14,7 @@ export const StackNavigation = () => {
         <NavigationContainer>
             <Stack.Navigator initialRouteName='Home'>
                 <Stack.Screen
-                    name='Home'
+                    name={SCREENS.HOME}
                     component={HomeScreen}
                     options={{
                         title: "Productos",
@@ -21,7 +22,7 @@ export const StackNavigation = () => {
                     }}
                 />
                 <Stack.Screen
-                    name='AddProduct'
+                    name={SCREENS.ADDPRODUCT}
                     component={AddProductScreen}
                     options={{
                         title: "Añadir un producto",
@@ -29,7 +30,7 @@ export const StackNavigation = () => {
                     }}
                 />
                 <Stack.Screen
-                    name='ExpiredProducts'
+                    name={SCREENS.EXPIREDPRODUCTS}
                     component={HomeScreen}
                     options={{
                         title: "Productos vencidos",
